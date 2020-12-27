@@ -11,10 +11,9 @@ import java.util.Objects;
 @Service
 public class ArchiveConsumer {
 
-    private final String URL = "https://archive.org/wayback/available";
-
     public String getOlderLink(String newUrl, LocalDate timeStamp) {
         RestTemplate restTemplate = new RestTemplate();
+        final String URL = "https://archive.org/wayback/available";
         ResponseEntity<Archive> forObject = restTemplate.getForEntity(URL + "?url={newUrl}&timestamp={timestamp}", Archive.class, newUrl, getTimestamp(timeStamp));
         if (forObject.getStatusCode().is2xxSuccessful() &&
                 Objects.requireNonNull(forObject.getBody()).getArchived_snapshots().getClosest() != null) {
