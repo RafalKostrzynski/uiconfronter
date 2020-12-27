@@ -10,17 +10,17 @@ public class MicrolinkConsumer {
 
     private final String URL = "https://api.microlink.io";
 
-    public Microlink getMicrolinkInfo(String link){
+    public Microlink getMicrolinkInfo(String link) {
         link = checkLink(link);
-        RestTemplate restTemplate=new RestTemplate();
-        ResponseEntity<Microlink>forObject = restTemplate.getForEntity(URL+"?url={link}",Microlink.class, link);
-        if(forObject.getStatusCode().is2xxSuccessful()){
+        RestTemplate restTemplate = new RestTemplate();
+        ResponseEntity<Microlink> forObject = restTemplate.getForEntity(URL + "?url={link}", Microlink.class, link);
+        if (forObject.getStatusCode().is2xxSuccessful()) {
             return forObject.getBody();
-        }else return null;
+        } else return null;
     }
 
     private String checkLink(String link) {
-        if(!link.contains("http://"))link = "https://"+link;
+        if (!link.contains("http://")) link = "https://" + link;
         return link;
     }
 }

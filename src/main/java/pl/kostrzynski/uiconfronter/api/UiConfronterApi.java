@@ -20,9 +20,9 @@ import java.util.List;
 @RequestMapping("/UI-Confronter")
 public class UiConfronterApi {
 
-    private ArchiveConsumer archiveConsumer;
-    private MicrolinkConsumer microlinkConsumer;
-    private PageInfoRepo pageInfoRepo;
+    private final ArchiveConsumer archiveConsumer;
+    private final MicrolinkConsumer microlinkConsumer;
+    private final PageInfoRepo pageInfoRepo;
 
     @Autowired
     public UiConfronterApi(ArchiveConsumer archiveConsumer, MicrolinkConsumer microlinkConsumer, PageInfoRepo pageInfoRepo) {
@@ -41,7 +41,7 @@ public class UiConfronterApi {
                                                           @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate localDate) {
 
         String olderLink = archiveConsumer.getOlderLink(url, localDate);
-        if(olderLink==null)return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        if (olderLink == null) return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         Microlink oldMicrolink = microlinkConsumer.getMicrolinkInfo(olderLink);
 
         Microlink newMicrolink;

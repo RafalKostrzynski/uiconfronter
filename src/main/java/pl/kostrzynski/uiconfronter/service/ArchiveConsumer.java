@@ -13,19 +13,19 @@ public class ArchiveConsumer {
 
     private final String URL = "https://archive.org/wayback/available";
 
-    public String getOlderLink(String newUrl, LocalDate timeStamp){
+    public String getOlderLink(String newUrl, LocalDate timeStamp) {
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<Archive> forObject = restTemplate.getForEntity(URL + "?url={newUrl}&timestamp={timestamp}", Archive.class, newUrl, getTimestamp(timeStamp));
-        if(forObject.getStatusCode().is2xxSuccessful() &&
-                Objects.requireNonNull(forObject.getBody()).getArchived_snapshots().getClosest()!=null){
+        if (forObject.getStatusCode().is2xxSuccessful() &&
+                Objects.requireNonNull(forObject.getBody()).getArchived_snapshots().getClosest() != null) {
             return forObject.getBody().getArchived_snapshots().getClosest().getUrl();
-        }else{
+        } else {
             return null;
         }
     }
 
     private String getTimestamp(LocalDate timeStamp) {
-        return String.valueOf(timeStamp.getYear()+timeStamp.getMonthValue()+timeStamp.getDayOfMonth());
+        return String.valueOf(timeStamp.getYear() + timeStamp.getMonthValue() + timeStamp.getDayOfMonth());
     }
 
 }
