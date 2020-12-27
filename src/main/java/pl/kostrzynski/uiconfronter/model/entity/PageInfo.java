@@ -3,23 +3,23 @@ package pl.kostrzynski.uiconfronter.model.entity;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.Objects;
 
 @Entity
-public class PageInfoEntity {
+public class PageInfo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @CreationTimestamp
     @Column(nullable = false)
-    private Date createDate;
+    private LocalDate createDate;
     @Column(nullable = false)
     private String oldPage;
     @Column(nullable = false)
     private String newPage;
 
-    public PageInfoEntity() {
+    public PageInfo() {
     }
 
     public long getId() {
@@ -30,11 +30,11 @@ public class PageInfoEntity {
         this.id = id;
     }
 
-    public Date getCreateDate() {
+    public LocalDate getCreateDate() {
         return createDate;
     }
 
-    public void setCreateDate(Date createDate) {
+    public void setCreateDate(LocalDate createDate) {
         this.createDate = createDate;
     }
 
@@ -58,7 +58,7 @@ public class PageInfoEntity {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        PageInfoEntity that = (PageInfoEntity) o;
+        PageInfo that = (PageInfo) o;
         return id == that.id &&
                 createDate.equals(that.createDate) &&
                 oldPage.equals(that.oldPage) &&
