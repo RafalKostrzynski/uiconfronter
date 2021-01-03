@@ -1,0 +1,24 @@
+#application-title,#page-title{
+  padding: 20px;
+  font-size:32px;
+  font-family: Segoe UI, serif;
+  font-weight: bold;
+  box-shadow: black;
+  color: #707070;
+}
+#application-title{
+  float:left;
+  width:50%;
+}
+
+#page-title{
+  float:right;
+  width:25%;
+}
+
+#header-line{
+  width: 100%;
+  border-width: 10px;
+  border-bottom-color: #707070;
+  margin-bottom: 40px;
+}

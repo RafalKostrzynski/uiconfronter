@@ -1,0 +1,79 @@
+<div class="pages">
+
+  <div class="display-data">
+
+    <table id="compare-table">
+      <thead>
+      <tr>
+        <th>Elements</th>
+        <th>Old website</th>
+        <th>New website</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>Title</td>
+        <td>{{pagesInfo[0].data.title}}</td>
+        <td>{{pagesInfo[1].data.title}}</td>
+      </tr>
+      <tr>
+        <td>Description</td>
+        <td>{{pagesInfo[0].data.description}}</td>
+        <td>{{pagesInfo[1].data.description}}</td>
+      </tr>
+      <tr>
+        <td>Language</td>
+        <td>{{pagesInfo[0].data.language}}</td>
+        <td>{{pagesInfo[1].data.language}}</td>
+      </tr>
+      <tr>
+        <td>Author</td>
+        <td>{{pagesInfo[0].data.author}}</td>
+        <td>{{pagesInfo[1].data.author}}</td>
+      </tr>
+      <tr>
+        <td>Publisher</td>
+        <td>{{pagesInfo[0].data.publisher}}</td>
+        <td>{{pagesInfo[1].data.publisher}}</td>
+      </tr>
+      <tr>
+        <td>Image url</td>
+        <td>{{pagesInfo[0].data.image.url}}</td>
+        <td>{{pagesInfo[1].data.image.url}}</td>
+      </tr>
+      <tr>
+        <td>Date</td>
+        <td>{{pagesInfo[0].data.date}}</td>
+        <td>{{pagesInfo[1].data.date}}</td>
+      </tr>
+      <tr>
+        <td>Website url</td>
+        <td>{{pagesInfo[0].data.url}}</td>
+        <td>{{pagesInfo[1].data.url}}</td>
+      </tr>
+      <tr>
+        <td>Logo url</td>
+        <td>{{pagesInfo[0].data.logo.url}}</td>
+        <td>{{pagesInfo[1].data.logo.url}}</td>
+      </tr>
+      </tbody>
+    </table>
+
+    <button type="button" id="save-button">Save website</button>
+
+  </div>
+
+  <div class="enter-data">
+
+    <label for="url">LORUM IPSUM</label>
+    <input type="text" id="url" placeholder="Enter url">
+
+    <label for="page-date">Page date:</label><input type="date" id="page-date">
+
+    <button type="button" id="compare-websites" (click)="fillTableWithData()">Compare!</button>
+
+    <button type="button" id="visit-old-page" (click)="visitOldPage()">Visit old page</button>
+
+  </div>
+
+</div>

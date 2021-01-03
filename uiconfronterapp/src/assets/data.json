@@ -1,0 +1,58 @@
+[
+  {
+    "status": "success",
+    "data": {
+      "title": "Serwis internetowy Miasta Gdynia",
+      "description": "www.gdynia.pl – portal Miasta Gdynia. Wiadomości, turystyka, kultura, rozrywka, wydarzenia. Rozkłady jazdy i mapy.",
+      "lang": "pl",
+      "author": "Rafal",
+      "publisher": "Oficjalny serwis internetowy miasta Gdynia",
+      "image": {
+        "url": "https://www.gdynia.pl/",
+        "type": "s",
+        "size": 0,
+        "height": 0,
+        "width": 0,
+        "size_pretty": "null"
+      },
+      "date": "2021-01-03",
+      "url": "http://web.archive.org/web/20201219091907/https://www.gdynia.pl/",
+      "logo": {
+        "url": "https://logo.clearbit.com/archive.org",
+        "type": "png",
+        "size": 8663,
+        "height": 128,
+        "width": 128,
+        "size_pretty": "8.66 kB"
+      }
+    }
+  },
+  {
+    "status": "success",
+    "data": {
+      "title": "Serwis internetowy Miasta Gdynia",
+      "description": "www.gdynia.pl – portal Miasta Gdynia. Wiadomości, turystyka, kultura, rozrywka, wydarzenia. Rozkłady jazdy i mapy.",
+      "lang": "pl",
+      "author": "null",
+      "publisher": "Oficjalny serwis internetowy miasta Gdynia",
+      "image": {
+        "url": "https://www.gdynia.pl/",
+        "type": "nul",
+        "size": 0,
+        "height": 0,
+        "width": 0,
+        "size_pretty": "null"
+      },
+      "date": "2021-01-03",
+      "url": "https://www.gdynia.pl",
+      "logo": {
+        "url": "https://logo.clearbit.com/gdynia.pl",
+        "type": "png",
+        "size": 11002,
+        "height": 128,
+        "width": 128,
+        "size_pretty": "11 kB"
+      }
+    }
+  }
+]

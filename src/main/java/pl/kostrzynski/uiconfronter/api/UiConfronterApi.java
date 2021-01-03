@@ -19,8 +19,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "/UI-Confronter",
-        produces = MediaType.APPLICATION_JSON_VALUE,
-        consumes = MediaType.APPLICATION_JSON_VALUE)
+        produces = MediaType.APPLICATION_JSON_VALUE)
 public class UiConfronterApi {
 
     private final ArchiveConsumer archiveConsumer;
