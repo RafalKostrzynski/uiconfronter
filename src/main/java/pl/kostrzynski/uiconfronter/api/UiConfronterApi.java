@@ -43,15 +43,23 @@ public class UiConfronterApi {
                                                           @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate localDate) {
 
         String olderLink = archiveConsumer.getOlderLink(url, localDate);
-        if (olderLink == null) return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        if (olderLink == null) return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         Microlink oldMicrolink = microlinkConsumer.getMicrolinkInfo(olderLink);
 
         Microlink newMicrolink;
         if (oldMicrolink.getData() != null)
             newMicrolink = microlinkConsumer.getMicrolinkInfo(url);
-        else return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        if (oldMicrolink.getData() == null) return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        else return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        if (oldMicrolink.getData() == null) return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         return new ResponseEntity<>(new ArrayList<>(Arrays.asList(oldMicrolink, newMicrolink)), HttpStatus.ACCEPTED);
+    }
+
+    @GetMapping("/get-older-link")
+    public ResponseEntity<String> getOlderLink(@RequestParam String url,
+                                               @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate localDate){
+        String olderLink = archiveConsumer.getOlderLink(url, localDate);
+        if(olderLink == null)return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        return new ResponseEntity<>(olderLink,HttpStatus.ACCEPTED);
     }
 
     @PostMapping
