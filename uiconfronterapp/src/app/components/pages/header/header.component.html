@@ -1,3 +1,8 @@
+<div *ngIf="loaderService.isLoading | async" class="loader-container">
+  <h1 id="patience-warning">Please be patient, collecting the data could take even up to 30 seconds.</h1>
+  <h3 id="patience-warning-small">This happens because of the archive.org service</h3>
+  <mat-spinner id="spinner" mode="indeterminate"></mat-spinner>
+</div>
 <div class="header">
 
   <h1 id="application-title">UI-Confronter</h1>

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpParams} from "@angular/common/http";
 import {PageInfo} from "./models/PageInfo";
 import {Observable} from "rxjs";
 
@@ -8,11 +8,11 @@ import {Observable} from "rxjs";
 })
 export class HttpServiceService {
 
-  private url:string="assets/data.json"
   constructor(private http:HttpClient) { }
 
   getData():Observable<PageInfo[]>{
-    return this.http.get<PageInfo[]>(this.url);
+    let params = new HttpParams().set("url","facebook.com").set("localDate", "2010-12-10");
+    return this.http.get<PageInfo[]>("http://localhost:8080/UI-Confronter",  {params: params} );
   }
 
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {HttpServiceService} from "../../http-service.service";
 import {PageInfo} from "../../models/PageInfo";
 
@@ -9,20 +9,20 @@ import {PageInfo} from "../../models/PageInfo";
 })
 export class PagesComponent implements OnInit {
 
-  pagesInfo=[];
+  pagesInfo = [];
 
-  constructor(private _httpService:HttpServiceService) {
+  constructor(private _httpService: HttpServiceService) {
   }
 
-  ngOnInit(): void{
+  ngOnInit(): void {
   }
 
-  visitOldPage(pageUrl:string){
-
+  visitOldPage(pageUrl: string, date: Date) {
+    window.open(pageUrl, "_blank");
   }
 
-  fillTableWithData(pageUrl:string, date:Date){
-    this._httpService.getData().subscribe(data=>this.pagesInfo=data);
+  fillTableWithData(pageUrl: string, date: Date) {
+    this._httpService.getData().subscribe(data => this.pagesInfo = data);
 
   }
 
