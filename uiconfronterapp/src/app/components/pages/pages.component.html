@@ -1,6 +1,6 @@
 <div class="pages">
 
-  <div class="display-data">
+  <div class="display-data" id="display-data">
 
     <table id="compare-table">
       <thead>
@@ -63,17 +63,22 @@
 
   </div>
 
-  <div class="enter-data">
+  <div class="enter-data" id="enter-data">
 
-    <label for="url">LORUM IPSUM</label>
-    <input type="text" id="url" placeholder="Enter url">
+    <div class="enter-data-value">
+      <label for="url" id="url-label">URL:</label>
+      <input type="text" id="url" placeholder="Enter url..." #pageUrl [placeholder]="pageUrl">
 
-    <label for="page-date">Page date:</label><input type="date" id="page-date">
+      <label for="page-date" id="date-label">Page date:</label>
+      <input type="date" id="page-date" placeholder="Choose a date..." #date [placeholder]="date">
+    </div>
+    <div class="buttons">
+      <button type="button" id="compare-websites" (click)="fillTableWithData(pageUrl.value, date.valueAsDate)">
+        Compare!
+      </button>
 
-    <button type="button" id="compare-websites" (click)="fillTableWithData()">Compare!</button>
-
-    <button type="button" id="visit-old-page" (click)="visitOldPage()">Visit old page</button>
-
+      <button type="button" id="visit-old-page" (click)="visitOldPage(pageUrl.value)">Visit old page</button>
+    </div>
   </div>
 
 </div>

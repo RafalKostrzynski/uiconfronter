@@ -9,19 +9,19 @@ import {PageInfo} from "../../models/PageInfo";
 })
 export class PagesComponent implements OnInit {
 
-  public pagesInfo=[];
-  public pageUrl:string;
-  public date:string;
+  pagesInfo=[];
 
-  constructor(private _httpService:HttpServiceService) { }
+  constructor(private _httpService:HttpServiceService) {
+  }
 
   ngOnInit(): void{
   }
 
-  visitOldPage(){
+  visitOldPage(pageUrl:string){
+
   }
 
-  fillTableWithData(){
+  fillTableWithData(pageUrl:string, date:Date){
     this._httpService.getData().subscribe(data=>this.pagesInfo=data);
 
   }
