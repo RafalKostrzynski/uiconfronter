@@ -24,7 +24,7 @@ public class ArchiveConsumer {
     }
 
     private String getTimestamp(LocalDate timeStamp) {
-        return String.valueOf(timeStamp.getYear() + timeStamp.getMonthValue() + timeStamp.getDayOfMonth());
+        return timeStamp.getYear() + String.format("%02d", timeStamp.getMonthValue()) + String.format("%02d", timeStamp.getDayOfMonth());
     }
 
 }

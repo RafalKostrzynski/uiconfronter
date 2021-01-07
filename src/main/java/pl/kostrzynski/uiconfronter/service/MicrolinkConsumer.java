@@ -19,7 +19,7 @@ public class MicrolinkConsumer {
     }
 
     private String checkLink(String link) {
-        if (!link.contains("http://") || !link.contains("https://")) link = "http://" + link;
+        if (!link.contains("http://") && !link.contains("https://")) link = "http://" + link;
         return link;
     }
 }
