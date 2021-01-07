@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient, HttpParams} from "@angular/common/http";
 import {PageInfo} from "./models/PageInfo";
 import {Observable} from "rxjs";
@@ -8,11 +8,16 @@ import {Observable} from "rxjs";
 })
 export class HttpServiceService {
 
-  constructor(private http:HttpClient) { }
-
-  getData():Observable<PageInfo[]>{
-    let params = new HttpParams().set("url","facebook.com").set("localDate", "2010-12-10");
-    return this.http.get<PageInfo[]>("http://localhost:8080/UI-Confronter",  {params: params} );
+  constructor(private http: HttpClient) {
   }
 
+  getCompareData(pageUrl: string, date: Date): Observable<PageInfo[]> {
+    let params = new HttpParams().set("url", pageUrl).set("localDate", date.toISOString().substr(0,10));
+    return this.http.get<PageInfo[]>("http://localhost:8080/UI-Confronter/compare-info", {params: params});
+  }
+
+  getOlderWebsite(pageUrl: string, date: Date): Observable<string> {
+    let params = new HttpParams().set("url", pageUrl).set("localDate", date.toISOString().substr(0,10));
+    return this.http.get<string>("http://localhost:8080/UI-Confronter/get-older-link", {params: params});
+  }
 }

@@ -12,48 +12,48 @@
       <tbody>
       <tr>
         <td>Title</td>
-        <td>{{pagesInfo[0].data.title}}</td>
-        <td>{{pagesInfo[1].data.title}}</td>
+        <td>{{pagesInfo[0]?.data?.title}}</td>
+        <td>{{pagesInfo[1]?.data?.title}}</td>
       </tr>
       <tr>
         <td>Description</td>
-        <td>{{pagesInfo[0].data.description}}</td>
-        <td>{{pagesInfo[1].data.description}}</td>
+        <td>{{pagesInfo[0]?.data?.description}}</td>
+        <td>{{pagesInfo[1]?.data?.description}}</td>
       </tr>
       <tr>
         <td>Language</td>
-        <td>{{pagesInfo[0].data.language}}</td>
-        <td>{{pagesInfo[1].data.language}}</td>
+        <td>{{pagesInfo[0]?.data?.language}}</td>
+        <td>{{pagesInfo[1]?.data?.language}}</td>
       </tr>
       <tr>
         <td>Author</td>
-        <td>{{pagesInfo[0].data.author}}</td>
-        <td>{{pagesInfo[1].data.author}}</td>
+        <td>{{pagesInfo[0]?.data?.author}}</td>
+        <td>{{pagesInfo[1]?.data?.author}}</td>
       </tr>
       <tr>
         <td>Publisher</td>
-        <td>{{pagesInfo[0].data.publisher}}</td>
-        <td>{{pagesInfo[1].data.publisher}}</td>
+        <td>{{pagesInfo[0]?.data?.publisher}}</td>
+        <td>{{pagesInfo[1]?.data?.publisher}}</td>
       </tr>
       <tr>
         <td>Image url</td>
-        <td>{{pagesInfo[0].data.image.url}}</td>
-        <td>{{pagesInfo[1].data.image.url}}</td>
+        <td>{{pagesInfo[0]?.data?.image?.url}}</td>
+        <td>{{pagesInfo[1]?.data?.image?.url}}</td>
       </tr>
       <tr>
         <td>Date</td>
-        <td>{{pagesInfo[0].data.date}}</td>
-        <td>{{pagesInfo[1].data.date}}</td>
+        <td>{{pagesInfo[0]?.data?.date}}</td>
+        <td>{{pagesInfo[1]?.data?.date}}</td>
       </tr>
       <tr>
         <td>Website url</td>
-        <td>{{pagesInfo[0].data.url}}</td>
-        <td>{{pagesInfo[1].data.url}}</td>
+        <td>{{pagesInfo[0]?.data?.url}}</td>
+        <td>{{pagesInfo[1]?.data?.url}}</td>
       </tr>
       <tr>
         <td>Logo url</td>
-        <td>{{pagesInfo[0].data.logo.url}}</td>
-        <td>{{pagesInfo[1].data.logo.url}}</td>
+        <td>{{pagesInfo[0]?.data?.logo?.url}}</td>
+        <td>{{pagesInfo[1]?.data?.logo?.url}}</td>
       </tr>
       </tbody>
     </table>
@@ -66,10 +66,10 @@
 
     <div class="enter-data-value">
       <label for="url" id="url-label">URL:</label>
-      <input type="text" id="url" placeholder="Enter url..." #pageUrl [placeholder]="pageUrl">
+      <input type="text" id="url" placeholder="Enter url..." #pageUrl >
 
       <label for="page-date" id="date-label">Page date:</label>
-      <input type="date" id="page-date" placeholder="Choose a date..." #date [placeholder]="date">
+      <input type="date" id="page-date" placeholder="Choose a date..." #date >
     </div>
     <div class="buttons">
       <button type="button" id="compare-websites" (click)="fillTableWithData(pageUrl.value, date.valueAsDate)">
