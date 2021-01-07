@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpServiceService} from "../../../http-service.service";
+import {PageEntity} from "../../../models/pageEntity";
 
 @Component({
   selector: 'app-second-page',
@@ -7,13 +8,14 @@ import {HttpServiceService} from "../../../http-service.service";
   styleUrls: ['./second-page.component.css']
 })
 export class SecondPageComponent implements OnInit {
-  dataSource:any[]=[];
-  displayedColumns: string[] = ['createDate', 'oldPage', 'newPage'];
+  pageEntityList:PageEntity[];
 
-  constructor(private _httpService: HttpServiceService) { }
-
-  ngOnInit(): void {
-    this._httpService.getAllSavedWebsites().subscribe(data=>this.dataSource=data);
+  constructor(private _httpService: HttpServiceService) {
+    this._httpService.getAllSavedWebsites().subscribe(data=> {
+      this.pageEntityList = data
+    });
   }
 
+  ngOnInit(): void {
+  }
 }
