@@ -22,6 +22,10 @@ export class HttpServiceService {
     return this.http.get<string>("http://localhost:8080/UI-Confronter/get-older-link", {params: params});
   }
 
+  getAllSavedWebsites(): Observable<PageEntity[]>{
+    return this.http.get<PageEntity[]>("http://localhost:8080/UI-Confronter/all");
+  }
+
   saveData(oldPage:string, newPage:string){
     let savePage = new PageEntity(oldPage,newPage);
     return this.http.post("http://localhost:8080/UI-Confronter",savePage)

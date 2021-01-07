@@ -1,0 +1,25 @@
+<div class="class">
+<app-header compareWebsites="Stored websites"></app-header>
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <ng-container matColumnDef="position">
+      <th mat-header-cell *matHeaderCellDef> Date </th>
+      <td mat-cell *matCellDef="let element"> {{element.createPage}} </td>
+    </ng-container>
+    <ng-container matColumnDef="position">
+      <th mat-header-cell *matHeaderCellDef> New website </th>
+      <td mat-cell *matCellDef="let element"> {{element.oldPage}} </td>
+    </ng-container>
+    <ng-container matColumnDef="position">
+      <th mat-header-cell *matHeaderCellDef> Old Page</th>
+      <td mat-cell *matCellDef="let element"> {{element.newPage}} </td>
+    </ng-container>
+    <ng-container matColumnDef="position">
+      <th mat-header-cell *matHeaderCellDef> Delete</th>
+      <td mat-cell >  </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  </table>
+
+</div>
