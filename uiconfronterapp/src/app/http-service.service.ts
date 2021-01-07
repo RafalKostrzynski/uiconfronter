@@ -17,9 +17,9 @@ export class HttpServiceService {
     return this.http.get<PageInfo[]>("http://localhost:8080/UI-Confronter/compare-info", {params: params});
   }
 
-  getOlderWebsite(pageUrl: string, date: Date): Observable<string> {
+  getOlderWebsite(pageUrl: string, date: Date): Observable<any> {
     let params = new HttpParams().set("url", pageUrl).set("localDate", date.toISOString().substr(0,10));
-    return this.http.get<string>("http://localhost:8080/UI-Confronter/get-older-link", {params: params});
+    return this.http.get("http://localhost:8080/UI-Confronter/get-older-link", {params: params});
   }
 
   getAllSavedWebsites(): Observable<any>{
