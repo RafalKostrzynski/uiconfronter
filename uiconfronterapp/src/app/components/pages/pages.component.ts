@@ -46,4 +46,13 @@ export class PagesComponent implements OnInit {
       throw new Error("Invalid url try again!")
     }
   }
+
+  saveData(){
+    this.pagesInfo.forEach(e=>{
+      if(e.data.url===null){throw new Error("Wrong data try again!");}
+    })
+    let saved;
+    this._httpService.saveData(this.pagesInfo[0].data.url,this.pagesInfo[1].data.url).subscribe(data=>saved=data);
+    throw new Error("Data saved successfully");
+  }
 }

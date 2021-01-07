@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient, HttpParams} from "@angular/common/http";
 import {PageInfo} from "./models/PageInfo";
 import {Observable} from "rxjs";
+import {PageEntity} from "./models/pageEntity";
 
 @Injectable({
   providedIn: 'root'
@@ -19,5 +20,10 @@ export class HttpServiceService {
   getOlderWebsite(pageUrl: string, date: Date): Observable<string> {
     let params = new HttpParams().set("url", pageUrl).set("localDate", date.toISOString().substr(0,10));
     return this.http.get<string>("http://localhost:8080/UI-Confronter/get-older-link", {params: params});
+  }
+
+  saveData(oldPage:string, newPage:string){
+    let savePage = new PageEntity(oldPage,newPage);
+    return this.http.post("http://localhost:8080/UI-Confronter",savePage)
   }
 }
