@@ -9,6 +9,7 @@ import {LoaderService} from "../../loader/loader.service";
 export class HeaderComponent implements OnInit {
 
   @Input() compareWebsites:string;
+  @Input() navigationLink:string
 
   constructor(public loaderService: LoaderService) {
   }

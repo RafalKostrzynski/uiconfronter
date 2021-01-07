@@ -65,3 +65,7 @@
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: red;
 }
+
+#navigation.active{
+  color: aquamarine;
+}

@@ -8,7 +8,6 @@ const routes:Routes=[
   {path:'stored-websites',component:SecondPageComponent}
   ];
 
-
 @NgModule({
   imports:[RouterModule.forRoot(routes)],
   exports:[RouterModule]
