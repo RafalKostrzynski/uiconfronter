@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {LoaderService} from "../../loader/loader.service";
 
 @Component({
@@ -7,6 +7,8 @@ import {LoaderService} from "../../loader/loader.service";
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+
+  @Input() compareWebsites:string;
 
   constructor(public loaderService: LoaderService) {
   }
