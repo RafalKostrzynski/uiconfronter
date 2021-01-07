@@ -6,6 +6,7 @@
     <th>Date</th>
     <th>New website</th>
     <th>Old website</th>
+    <th>Delete</th>
   </tr>
   </thead>
   <tbody>
@@ -13,6 +14,7 @@
     <td>{{column.createDate}}</td>
     <td>{{column.newPage}}</td>
     <td>{{column.oldPage}}</td>
+    <td> <button type="button" (click)="deletePage(column.id)">Delete</button></td>
   </tr>
   </tbody>
 </table>

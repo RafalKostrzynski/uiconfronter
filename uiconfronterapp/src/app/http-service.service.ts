@@ -30,4 +30,8 @@ export class HttpServiceService {
     let savePage = new PageEntity(oldPage,newPage);
     return this.http.post("http://localhost:8080/UI-Confronter",savePage)
   }
+
+  deleteData(id:number){
+    return this.http.delete("http://localhost:8080/UI-Confronter/"+id);
+  }
 }

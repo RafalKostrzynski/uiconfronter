@@ -98,6 +98,6 @@ button[type=button]:hover {
 }
 
 #display-data{
-  width: 75%;
+  width: 100%;
   float: top;
 }

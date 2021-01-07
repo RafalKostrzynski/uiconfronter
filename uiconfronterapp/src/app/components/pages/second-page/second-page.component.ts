@@ -11,11 +11,21 @@ export class SecondPageComponent implements OnInit {
   pageEntityList:PageEntity[];
 
   constructor(private _httpService: HttpServiceService) {
-    this._httpService.getAllSavedWebsites().subscribe(data=> {
-      this.pageEntityList = data
-    });
+    this.getData();
   }
 
   ngOnInit(): void {
+  }
+
+  deletePage(id:number){
+    this._httpService.deleteData(id).subscribe();
+    this.getData();
+    throw new Error("Deleted successfully")
+  }
+
+  getData(){
+    this._httpService.getAllSavedWebsites().subscribe(data=> {
+      this.pageEntityList = data;
+    });
   }
 }

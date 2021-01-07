@@ -54,8 +54,7 @@ export class PagesComponent implements OnInit {
         throw new Error("Wrong data try again!");
       }
     })
-    let saved;
-    this._httpService.saveData(this.pagesInfo[0].data.url, this.pagesInfo[1].data.url).subscribe(data => saved = data);
-    if (saved === undefined) throw new Error("Data saved successfully");
+    this._httpService.saveData(this.pagesInfo[0].data.url, this.pagesInfo[1].data.url).subscribe();
+    throw new Error("Data saved successfully");
   }
 }
