@@ -1,0 +1,13 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: uiconfronter-configmap
+  namespace: labproj20
+  selfLink: /api/v1/namespaces/labproj20/configmaps/uiconfronter-configmap
+  uid: a4400e12-22c3-4217-8e62-936b16bc694c
+  resourceVersion: '173347650'
+  creationTimestamp: '2021-01-18T09:30:32Z'
+data:
+  DB_NAME: mydb
+  OPENSHIFT_MYSQL_DB_HOST: mysql
+  OPENSHIFT_MYSQL_DB_PORT: '3306'
